@@ -42,3 +42,13 @@ repos:
     hooks:
       - id: bandit
         args: ["-c", "pyproject.toml"]
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: uv run pytest tests
+        language: system
+        types: [python]
+        pass_filenames: false
+        always_run: true
